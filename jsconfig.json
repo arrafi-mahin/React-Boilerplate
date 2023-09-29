@@ -3,6 +3,9 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
-    }
-  }
+    },
+    // "rules": {
+    //   "no-restricted-imports": ["error", { "patterns": ["@/features/*/*"] }]
+    // }
+  },
 }
