@@ -3,7 +3,7 @@ import styles from './shop.module.css'
 
 const index = () => {
   return (
-    <div>
+    <div className='container mx-auto text-center'>
       Shop
     </div>
   )
