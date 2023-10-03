@@ -5,7 +5,7 @@ import cancel from '../../assets/Icons/cancel.svg'
 // import styles from './navbar.module.css'
 
 
-const index = () => {
+const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
   const location = useLocation();
 
@@ -48,7 +48,7 @@ const index = () => {
           <img onClick={()=> setIsActive(false)} className='h-6 absolute right-6 top-6' src={cancel} alt="" />
           
         </div>
-        <ul className= {`absolute bg-white font-medium flex flex-col gap-4 z-20 py-20 px-10 bottom-0  top-0 min-w-[50vw] max-w-[80vw] duration-500 ease-in-out ${isActive?'left-0':'left-[-100vw]'}`}>
+        <ul className= {`fixed bg-white font-medium flex flex-col gap-4 z-20 py-20 px-10 bottom-0  top-0 min-w-[50vw] max-w-[80vw] duration-500 ease-in-out ${isActive?'left-0':'left-[-100vw]'}`}>
             <li>
               <NavLink className={({ isActive }) => isActive ? 'text-red-500' : 'text-black'} to="/" >Home</NavLink>
             </li>
@@ -65,4 +65,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Navbar;

@@ -1,15 +1,19 @@
-import React from 'react'
-// import styles from './home.module.css'
+import React, { useState } from 'react'
 import { useGetAllProductsQuery, useGetProductQuery } from '@/services/Api';
+import { Modal } from '@/components';
 
-const index = () => {
+const Home = () => {
+  const [modal, setModal] = useState(true);
   const { data, isError, isLoading, } = useGetAllProductsQuery();
   const { data: search } = useGetProductQuery('iphone')
+
+  const modalHandler  = ( )=>{
+      setModal(false)
+  }
   return (<>
     {!isLoading ? (<div className={'container mx-auto'}>
       <div className="flex gap-2 flex-wrap justify-center">
         {data?.products?.map((product, index) => {
-          console.log(product)
           return (
             <div key={index} className="max-w-sm m-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
               <a href="#">
@@ -32,6 +36,7 @@ const index = () => {
           )
         })}
       </div>
+      <Modal show={modal} onClose={modalHandler}><h3 className="text-red-600">Hello world</h3></Modal>
     </div>
     ) : (<div className='w-full flex justify-center my-[10vh]' role="status">
     <svg aria-hidden="true" className="inline w-10 h-10 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,4 +49,4 @@ const index = () => {
   )
 }
 
-export default index;
+export default Home;

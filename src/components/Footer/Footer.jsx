@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // import styles from './footer.module.css'
 const date = new Date();
 
-const index = () => {
+const Footer = () => {
   return (
 
     <footer className="bg-white dark:bg-gray-900">
@@ -101,4 +101,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Footer;

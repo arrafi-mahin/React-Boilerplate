@@ -1,7 +1,6 @@
 import React from 'react'
-// import styles from './button.module.css'
 
-const index = () => {
+const Button = () => {
   return (
     <button>
       Button
@@ -9,4 +8,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Button;

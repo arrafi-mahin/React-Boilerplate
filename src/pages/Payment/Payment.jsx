@@ -1,7 +1,6 @@
 import React from 'react'
-import styles from './payment.module.css'
 
-const index = () => {
+const Payment = () => {
   return (
     <div>
       Payment
@@ -9,4 +8,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Payment

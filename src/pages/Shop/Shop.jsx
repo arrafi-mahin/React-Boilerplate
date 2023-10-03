@@ -1,7 +1,6 @@
 import React from 'react'
-import styles from './shop.module.css'
 
-const index = () => {
+const Shop = () => {
   return (
     <div className='container mx-auto text-center'>
       Shop
@@ -9,4 +8,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Shop;
