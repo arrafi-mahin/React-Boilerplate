@@ -6,11 +6,13 @@ import { Provider } from 'react-redux'
 import { store } from './store/Store/store.js'
 import { ApiProvider } from '@reduxjs/toolkit/dist/query/react/';
 import { proudctApi } from './services/Api.js';
+import Toast from './lib/Toaster/Toast.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
     <ApiProvider api={proudctApi}>
       <App />
+      <Toast />
     </ApiProvider>
   </Provider>
 )

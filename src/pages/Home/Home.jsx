@@ -1,19 +1,28 @@
 import React, { useState } from 'react'
 import { useGetAllProductsQuery, useGetProductQuery } from '@/services/Api';
 import { Modal } from '@/components';
+import toast from 'react-hot-toast';
+import useFetch from '@/utils/hooks/useFetch';
 
 const Home = () => {
-  const [modal, setModal] = useState(true);
+  const [modal, setModal] = useState(false);
   const { data, isError, isLoading, } = useGetAllProductsQuery();
   const { data: search } = useGetProductQuery('iphone')
 
   const modalHandler  = ( )=>{
       setModal(false)
   }
+
+  // api wrapper
+  const fetchHandler = ()=>{
+    const {data: fetchData, loading, error} = useFetch('get','/products');
+    console.log(fetchData, loading, error);
+  }
+
   return (<>
     {!isLoading ? (<div className={'container mx-auto'}>
       <div className="flex gap-2 flex-wrap justify-center">
-        {data?.products?.map((product, index) => {
+        {data?.products?.slice(0, 3).map((product, index) => {
           return (
             <div key={index} className="max-w-sm m-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
               <a href="#">
@@ -35,6 +44,11 @@ const Home = () => {
 
           )
         })}
+        <div className="p-4">
+        <button className='bg-blue-500 px-4 py-2 text-white rounded' onClick={()=>setModal(true)}> Modal</button>
+        <button className='bg-blue-500 px-4 py-2 text-white rounded' onClick={()=>toast.success('Hello World')}> Toast</button>
+        <button className='bg-blue-500 px-4 py-2 text-white rounded' onClick={fetchHandler}> Fetch</button>
+        </div>
       </div>
       <Modal show={modal} onClose={modalHandler}><h3 className="text-red-600">Hello world</h3></Modal>
     </div>
