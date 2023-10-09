@@ -15,19 +15,23 @@ import React from 'react';
  */
 
 const styles = {
-  primary: ''
+  primary: 'bg-primary2 text-white py-3 px-4 w-full font-nunito font-bold text-base',
+  secondary: 'bg-primary2 text-white py-2 px-4 w-full font-nunito font-bold',
+  small: 'bg-primary2 text-white py-1 px-4 w-full font-nunito font-normal',
+  outline: 'border border-primary rounded-full py-2 px-4 text-base font-semibold text-primary font-nunito w-full',
 };
 
 const Button = ({
   style = 'primary', // Default style to 'primary'
   className = '',
+  type = 'button',
   children = '',
-  onClick = ''
+  onClick
 }) => {
   return (
     <button
-      className={`${styles[style]} ${className}`} 
-      onClick={onClick} 
+      className={`${styles[style]} ${className} rounded-full`}
+      onClick={onClick} type={type}
     >
       {children}
     </button>

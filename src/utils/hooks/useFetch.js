@@ -1,26 +1,38 @@
 import axios from 'axios';
-import  { useEffect, useState } from 'react';
-import toast from 'react-hot-toast';
+import  { useState } from 'react';
 
-const useFetch = ({method,endpoint, payload}) => {
+const useFetch = () => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    const fetcher = async () => {        
-            const response = await axios.get(`${import.meta.env.SERVER_URL}${endpoint}`);
+    const get = async (endpoint) =>{
+        try{
+            setLoading(true);
+            const response = await axios.get(`${endpoint}`)
+            .then(res => {setData(res.data); return res.data})
+            .finally(()=> setLoading(false));
             return response;
+        }catch(error){
+            setError(error);
+        }
     }
-    useEffect(()=>{
-        const promise = fetcher();
-        toast.promise(promise,{
-            loading: () => {setLoading(true); return 'loading...'},
-            success: (response) => {setData(response.data); return 'Successful' } ,
-            error: (error) => {setError({code:error.code , message:error.message}); return (error.message) } ,
-        })
-        
-    },[]);
-    return {data, loading, error};
+    const post = async (endpoint, payload) =>{
+        const header = {
+            withCredentials: true,
+        };
+        try{
+            setLoading(true);
+            const response = await axios.post(`${import.meta.env.SERVER_URL}${endpoint}`,{payload}, {headers:header})
+            .then(res => {setData(res.data); return res.data})
+            .finally(()=> setLoading(false));
+            return response;
+        }catch(error){
+            setError(error);
+        }
+    }
+    
+    return {data, loading, error, post, get };
 };
 
 export default useFetch;
