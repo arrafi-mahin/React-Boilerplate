@@ -1,18 +1,13 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
+import Contexts from './feature/Context/index.jsx'
 import './index.css'
-import { Provider } from 'react-redux'
-import { store } from './store/Store/store.js'
-import { ApiProvider } from '@reduxjs/toolkit/dist/query/react/';
-import { proudctApi } from './services/Api.js';
 import Toast from './lib/Toaster/Toast.jsx'
+import React from 'react';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <Provider store={store}>
-    <ApiProvider api={proudctApi}>
-      <App />
-      <Toast />
-    </ApiProvider>
-  </Provider>
+  <Contexts>
+    <App />
+    <Toast />
+  </Contexts>
 )

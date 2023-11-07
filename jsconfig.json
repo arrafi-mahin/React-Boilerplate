@@ -2,10 +2,19 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": [
+        "src/*"
+      ]
     },
     // "rules": {
-    //   "no-restricted-imports": ["error", { "patterns": ["@/features/*/*"] }]
+    //   "no-restricted-imports": [
+    //     "error",
+    //     {
+    //       "patterns": [
+    //         "@/features/*/*"
+    //       ]
+    //     }
+    //   ]
     // }
   },
 }
