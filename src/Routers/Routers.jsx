@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 const Home = lazy(() => import('../pages/Home/Home'));
 const Login = lazy(() => import('../pages/Login/Login'));
 const Payment = lazy(() => import('../pages/Payment/Payment'));
@@ -11,20 +11,18 @@ const Loading = lazy(() => import('../pages/Loading/Landing'))
 function Routers() {
   return (
     <div>
-      <Router>
-        <Suspense fallback={<Loading />} >
-          <Routes>
-            <Route path="/" element={<Layout />} >
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/payment" element={<Payment />} />
-              <Route path="/shop" element={<Shop />} />
-              <Route path="/sign-up" element={<SignUp />} />
-            </Route>
-            <Route path="*" element={<ErrorPage />} />
-          </Routes>
-        </Suspense>
-      </Router>
+      <Suspense fallback={<Loading />} >
+        <Routes>
+          <Route path="/" element={<Layout />} >
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/payment" element={<Payment />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/sign-up" element={<SignUp />} />
+          </Route>
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </Suspense>
     </div>
   );
 }
