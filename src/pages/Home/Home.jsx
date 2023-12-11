@@ -6,14 +6,14 @@ import Switch from '@/components/Shared/Switch/Switch';
 import { dropdownData } from '@/db/UserData';
 import Modal from '@/components/Shared/Modal/Modal';
 // import { useGetAllProductsQuery, useGetProductQuery } from '@/services/Api';
-import useFetch from '@/utils/hooks/useFetch';
+// import useFetch from '@/utils/hooks/useFetch';
 import { useState } from 'react';
 import Tooltip from '../../components/Shared/ToolTip/ToolTip';
 const Home = () => {
   const [modal, setModal] = useState(false);
   // const { data, isError, isLoading, } = useGetAllProductsQuery();
   // const { data: search } = useGetProductQuery('iphone');
-  const { data: fetchData, loading, error, get } = useFetch();
+  // const { data: fetchData, loading, error, get } = useFetch();
   const [quantity, setQuantity] = useState(10);
 
   const quantityHandler = (event) => {
@@ -25,10 +25,10 @@ const Home = () => {
   }
 
   // api wrapper
-  const fetchHandler = async () => {
-    await get('https://dummyjson.com/products');
-    console.log(fetchData, loading, error)
-  }
+  // const fetchHandler = async () => {
+  //   await get('https://dummyjson.com/products');
+  //   console.log(fetchData, loading, error)
+  // }
   // Switch Hanlder
   const handleSwitchChange = (id, isChecked) => {
     console.log(`Switch with ID ${id} is now ${isChecked ? 'checked' : 'unchecked'}`);

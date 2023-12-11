@@ -1,13 +1,16 @@
 import React, { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import DashboardLayout from '../layout/DashboardLayout';
+import ErrorPage from '../pages/ErrorPage/ErrorPage';
+import Loading from '../pages/Loading/Landing';
+import Dashboard from '../pages/Dashboard/Dashboard';
 const Home = lazy(() => import('../pages/Home/Home'));
 const Login = lazy(() => import('../pages/Login/Login'));
 const Payment = lazy(() => import('../pages/Payment/Payment'));
 const Shop = lazy(() => import('../pages/Shop/Shop'));
 const SignUp = lazy(() => import('../pages/SignUp/SignUp'));
-const ErrorPage = lazy(() => import('../pages/ErrorPage/ErrorPage'));
 const Layout = lazy(() => import('../layout/Layout'));
-const Loading = lazy(() => import('../pages/Loading/Landing'))
+
 function Routers() {
   return (
     <div>
@@ -19,6 +22,9 @@ function Routers() {
             <Route path="/payment" element={<Payment />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/sign-up" element={<SignUp />} />
+          </Route>
+          <Route path='/dashboard' element={<DashboardLayout />} >
+            <Route path='/dashboard' element={<Dashboard />}  />
           </Route>
           <Route path="*" element={<ErrorPage />} />
         </Routes>
