@@ -12,14 +12,11 @@ import React from 'react';
  */
 const DashboardSidebar = () => {
     return (
-        // Wrapper div with padding
         <div className='p-5'>
-            {/* Text content for the sidebar */}
             <p>Dashboard Sidebar</p>
         </div>
     );
 };
 
 
-// Exporting the DashboardSidebar component as the default export
 export default DashboardSidebar;
