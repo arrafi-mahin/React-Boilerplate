@@ -6,14 +6,13 @@ npm i
 ```
 and
 ```javascript
-npm start
+npm dev
 ```
 
 Before using This project install latest versions of following packages
 
 - [Axios](https://www.npmjs.com/package/axios)
-- Bootstrap - React Strap - MUI - AntD - Tailwind
-- [React Icons](https://react-icons.github.io/react-icons/)
+- [Tailwind](https://tailwindcss.com/docs/guides/vite)
 - React Router Dom [Latest React Router v6](https://reactrouter.com/en/dev/upgrading/reach#install-react-router-v6)
 - Other Required packages
 
@@ -23,58 +22,43 @@ In the project I have just set Up most used folder structure:
 React JS Advanced Folder Structure
 .
 ├── public
-|     └── index.html
 ├── src
     ├── assets
-    |     ├── audios
-    |     ├── icons
-    |     ├── images
-    |     └── videos
+    |     ├── Audios
+    |     ├── Icons
+    |     ├── Images
+    |     └── Videos
     ├── components
-    |     ├── Button
-    |     |     ├── index.jsx
-    |     |     └── button.module.css
-    |	  ├── inputs
-    |     |     ├── index.jsx
-    |     |     └── inputs.module.css
-    |	  ├── Modal
-    |     |     ├── index.jsx
-    |     |     └── modal.module.css
-    |	  └── Tooltip
-    |           ├── index.jsx
-    |           └── tooltip.module.css
-    |     └── index.js
+          ├── Footer
+          ├── Navbar
+          ├── Shared
+    |           ├── Button
+    |           ├── Dropdown
+    |           ├── Inputs
+    |           ├── Modal
+    |           ├── Switch
+    |           ├── ToolTipd
     ├──  db
     |     ├── productsData.js
     |     └── userData.js
+    ├──  Feature
+          ├── Authentication
+    |     └── Support
     ├── layout
-    |     ├── Header
-    |     |     ├── index.jsx
-    |     |     └── header.module.css
-    |     ├── Navbar.jsx
-    |     |     ├── index.jsx
-    |     |     └── navbar.module.css
-    |     ├── Breadcrumbs.jsx
-    |     |     ├── index.jsx
-    |     |     └── breadcrumbs.module.css
-    |     └── Footer.jsx
-    |           ├── index.jsx
-    |           └── footer.module.css
-    |     └── index.js
+    |     ├── DashboardLayout.jsx
+    |     ├── Layout.jsx
+    ├── lib
+          ├── Toaster
+                ├── Toast.jsx
     ├── pages
     |     ├── Home
-    |     |     ├── index.jsx
-    |     |     └── home.module.css
+    |     |     ├── Home.jsx
     |     ├── Login
-    |     |     ├── index.jsx
-    |     |     └── login.module.css
+    |     |     ├── Login.jsx
     |     ├── Signup
-    |     |     ├── index.jsx
-    |     |     └── signup.module.css
+    |     |     ├── Signup.jsx
     |     └── About
-    |           ├── index.jsx
-    |           └── about.module.css
-    |     └── index.js
+    |           ├── About.jsx
     ├── Routers
     |     └── Routers.js
     ├── store
@@ -97,7 +81,8 @@ React JS Advanced Folder Structure
     ├── app.js
     ├── index.css
     ├── index.js
-|
+|    
+├── index.html
 ├── .gitignore
 ├── package-lock.json
 ├── package.json
