@@ -8,6 +8,7 @@ import Modal from '@/components/Shared/Modal/Modal';
 // import { useGetAllProductsQuery, useGetProductQuery } from '@/services/Api';
 import useFetch from '@/utils/hooks/useFetch';
 import { useState } from 'react';
+import Tooltip from '../../components/Shared/ToolTip/ToolTip';
 const Home = () => {
   const [modal, setModal] = useState(false);
   // const { data, isError, isLoading, } = useGetAllProductsQuery();
@@ -61,6 +62,7 @@ const Home = () => {
         <Modal show={modal} onClose={modalHandler}>
             <p className="">Hello world</p>
         </Modal>
+        <Tooltip information="hello world">ToolTip</Tooltip>
       </div>
 
     </div>
