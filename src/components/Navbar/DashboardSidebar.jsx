@@ -12,7 +12,7 @@ import React from 'react';
  */
 const DashboardSidebar = () => {
     return (
-        <div className='p-5 shrink-0 flex'>
+        <div className='p-5 bg-blue-500 h-full shrink-0 flex'>
             <p>Dashboard Sidebar</p>
         </div>
     );

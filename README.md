@@ -58,16 +58,22 @@ React JS Advanced Folder Structure
     |     ├── Signup
     |     |     ├── Signup.jsx
     |     └── About
-    |           ├── About.jsx
+    |     |     ├── About.jsx
+    |     └── Loading
+    |     |     ├── Loading.jsx
+    |     └── ErrorPage
+    |           ├── ErrorPage.jsx
     ├── Routers
-    |     └── Routers.js
+    |     └── Lazy.jsx
+    |     └── PrivateRoute.jsx
+    |     └── Routers.jsx
     ├── store
     |     ├── action.js  
     |     ├── reducers.js  
     |     └── store.js
     ├── services
     |     ├── api.js          // API request functions
-    |     └── dataUtils.js    // Data manipulation functions
+    |     └── socket.js    // Data manipulation functions
     ├── utils
     |     ├── constants
     |     |     ├── Strapi.js
@@ -233,8 +239,8 @@ export function formatDate(date) {
 Env files are used to store sensitive credentials such as API keys.
 
 ```javascript
-REACT_APP_API_URL=http://localhost:3001
-REACT_APP_DEBUG_MODE=true
+VITE_APP_API_URL=http://localhost:3001
+VITE_APP_DEBUG_MODE=true
 ```
 
 ### .env.example
@@ -242,8 +248,8 @@ REACT_APP_DEBUG_MODE=true
 Env files are used to store sensitive credentials such as API keys.
 
 ```javascript
-REACT_APP_API_KEY=
-REACT_APP_API_URL=
+VITE_APP_API_URL=
+VITE_APP_API_KEY=
 ```
 
 ### .eslintrc.cjs
