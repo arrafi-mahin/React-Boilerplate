@@ -20,3 +20,38 @@ export const dropdownData = [
         value: 'select4'
     },
 ]
+
+export const configData = [
+    {
+        name: 'Hired By',
+        key: 'name',
+    },
+    {
+        name: "Session No",
+        key: "sessionNo",
+    },
+    {
+        name: "Amount",
+        key: "amount",
+    },
+    {
+        name: "Status",
+        key: "status",
+    },
+];
+export const STUDENT_DATA = [
+    {
+        id: 1,
+        name: "Shazad Hossen",
+        sessionNo: "2420",
+        amount: 2,
+        status: "active",
+    },
+    {
+        id: 2,
+        name: "Rakib Hossen",
+        sessionNo: "2420",
+        amount: 2,
+        status: "active",
+    },
+]

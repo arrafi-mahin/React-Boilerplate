@@ -5,6 +5,9 @@ import Input from '@/components/Shared/Inputs/Input';
 import Switch from '@/components/Shared/Switch/Switch';
 import { dropdownData } from '@/db/UserData';
 import Modal from '@/components/Shared/Modal/Modal';
+import Table from '@/components/Shared/Table/Table';
+import { STUDENT_DATA, configData } from '../../db//UserData';
+
 // import { useGetAllProductsQuery, useGetProductQuery } from '@/services/Api';
 // import useFetch from '@/utils/hooks/useFetch';
 import { useState } from 'react';
@@ -58,13 +61,20 @@ const Home = () => {
       <div className="flex gap-5 flex-wrap">
         <Dropdown data={dropdownData} />
         <Switch id="exampleSwitch" defaultChecked={true} onChange={handleSwitchChange} />
-        <Button style='small' onClick={()=> setModal(true)} className='h-fit w-fit'>Modal</Button>
+        <Button style='small' onClick={() => setModal(true)} className='h-fit w-fit'>Modal</Button>
         <Modal show={modal} onClose={modalHandler}>
-            <p className="">Hello world</p>
+          <p className="">Hello world</p>
         </Modal>
         <Tooltip information="hello world">ToolTip</Tooltip>
       </div>
-
+      <div>
+        <Table
+          data={STUDENT_DATA}
+          config={configData}
+          showPagination={true}
+          serial={true}
+        />
+      </div>
     </div>
   </>
   )
