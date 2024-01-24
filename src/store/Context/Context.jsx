@@ -1,4 +1,4 @@
-import { proudctApi } from '@/services/Api';
+import { productApi } from '@/services/Api';
 import { store } from '@/store/Store/store';
 import { BrowserRouter } from 'react-router-dom';
 import React from 'react';
@@ -9,7 +9,7 @@ export default function Contexts({ children }) {
   return (
     <BrowserRouter>
       <Provider store={store}>
-        <ApiProvider api={proudctApi}>
+        <ApiProvider api={productApi}>
           {children}
         </ApiProvider>
       </Provider>

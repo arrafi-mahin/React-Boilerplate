@@ -7,7 +7,7 @@
 import  {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 
 // Create the product API using createApi
-export const proudctApi = createApi({
+export const productApi = createApi({
     reducerPath: 'productsApi',
     baseQuery: fetchBaseQuery({baseUrl:'https://dummyjson.com/'}),
     endpoints: (builder) => ({
@@ -43,4 +43,4 @@ export const proudctApi = createApi({
         }),
     }),
 });
-export const {useGetAllProductsQuery, useGetProductQuery, useGetSingleProductQuery, useAddProductMutation, useDeleteProductMutation} = proudctApi;
+export const {useGetAllProductsQuery, useGetProductQuery, useGetSingleProductQuery, useAddProductMutation, useDeleteProductMutation} = productApi;
