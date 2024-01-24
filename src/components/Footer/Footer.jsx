@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from '../../assets/Icons/react-logo.svg';
 import { Link } from 'react-router-dom';
+import logo from '../../assets/Icons/react-logo.svg';
 
 // Get the current year for the copyright notice
 const date = new Date();
@@ -13,7 +13,7 @@ const date = new Date();
  * @returns {ReactNode} The rendered footer component.
  */
 
-const Footer = () => {
+function Footer() {
   return (
     <footer className="bg-white dark:bg-gray-900">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
@@ -96,7 +96,10 @@ const Footer = () => {
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            © {date.getFullYear()}{' '}
+            ©
+            {' '}
+            {date.getFullYear()}
+            {' '}
             <a href="https://flowbite.com/" className="hover:underline">
               React Template
             </a>
@@ -104,11 +107,10 @@ const Footer = () => {
           </span>
           <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
             {/* Social media icons */}
-            <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+            <a href="#asd" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
               <svg
                 className="w-4 h-4"
                 aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
                 viewBox="0 0 8 19"
               >
@@ -128,6 +130,6 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;

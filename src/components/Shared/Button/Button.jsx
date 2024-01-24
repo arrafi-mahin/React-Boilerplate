@@ -21,21 +21,22 @@ const styles = {
   outline: 'border border-primary rounded-full py-2 px-4 text-base font-semibold text-primary font-nunito w-full',
 };
 
-const Button = ({
+function Button({
   style = 'primary', // Default style to 'primary'
   className = '',
   type = 'button',
   children = '',
-  onClick
-}) => {
+  onClick,
+}) {
   return (
     <button
       className={`${styles[style]} ${className} rounded-full`}
-      onClick={onClick} type={type}
+      onClick={onClick}
+      type={type}
     >
       {children}
     </button>
   );
-};
+}
 
 export default Button;

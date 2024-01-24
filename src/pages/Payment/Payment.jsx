@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-const Payment = () => {
+function Payment() {
   return (
     <div>
       Payment
     </div>
-  )
+  );
 }
 
-export default Payment
+export default Payment;

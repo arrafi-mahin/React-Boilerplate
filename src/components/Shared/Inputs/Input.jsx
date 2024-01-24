@@ -1,4 +1,3 @@
-
 /**
  * Input Component
  *
@@ -21,20 +20,21 @@ import React, { useRef } from 'react';
 import searchIcon from '../../../assets/Icons/search.svg';
 import plus from '../../../assets/Icons/plus.svg';
 import minus from '../../../assets/Icons/minus.svg';
+
 const styles = {
   primary: 'border border-label rounded-full text-primary2 placeholder-label text-sm leading-[1.375rem] font-nunito focus:border-primary4',
-  secondary: 'border border-[#001E174d] rounded-full text-primary placeholder-primary text-sm leading-[1.375rem] font-nunito focus:border-primary4'
+  secondary: 'border border-[#001E174d] rounded-full text-primary placeholder-primary text-sm leading-[1.375rem] font-nunito focus:border-primary4',
 };
 const labelStyle = {
   primary: 'text-primary1',
   secondary: 'text-primary',
-}
+};
 const inputSize = {
   lg: 'py-3',
   md: 'py-2',
-  sm: 'py-1'
-}
-const Input = ({
+  sm: 'py-1',
+};
+function Input({
   style = 'primary',
   className = '',
   id = '',
@@ -49,25 +49,25 @@ const Input = ({
   label = '',
   error,
   min = 0,
-  max
-}) => {
+  max,
+}) {
   const quantityRef = useRef();
   const decrementHandler = () => {
     const current = Number(quantityRef.current.value);
     if (current > 0) {
       quantityRef.current.value = current - 1;
     }
-  }
+  };
   const incrementHandler = () => {
     quantityRef.current.value = Number(quantityRef.current.value) + 1;
-  }
+  };
 
   if (type === 'search') {
     return (
       <div className={`flex gap-2 items-center border px-4 border-label rounded-full ${className} ${inputSize[size]}`}>
         <img className={size === 'lg' ? 'h-6 w-6' : 'h-4 w-4'} src={searchIcon} alt="" />
         <input
-          className={`text-label  focus:outline-none  `}
+          className="text-label  focus:outline-none  "
           id={id}
           name={name}
           value={value}
@@ -79,52 +79,50 @@ const Input = ({
         />
       </div>
     );
-  } else if (type === 'quantity') {
+  } if (type === 'quantity') {
     return (
-      <div className='flex flex-col'>
+      <div className="flex flex-col">
         <label className={`${labelStyle[style]} mb-1`} htmlFor={id}>{label}</label>
 
-        <div className={`${styles[style]} ${className} ${inputSize[size]} px-6 ${error ? 'border-danger' : ''} flex items-center justify-between`} >
-          <img className='cursor-pointer' onClick={() => decrementHandler(value)} src={minus} alt="" />
+        <div className={`${styles[style]} ${className} ${inputSize[size]} px-6 ${error ? 'border-danger' : ''} flex items-center justify-between`}>
+          <img className="cursor-pointer" onClick={() => decrementHandler(value)} src={minus} alt="" />
           <input
-            className={` focus:outline-none w-full text-center`}
+            className=" focus:outline-none w-full text-center"
             ref={quantityRef}
             id={id}
             name={name}
             value={value}
             onChange={onChange}
             onBlur={onBlur}
-            type={'number'}
+            type="number"
             min={min}
             max={max}
             placeholder={placeholder}
             {...rest}
           />
-          <img className='cursor-pointer' onClick={() => incrementHandler(value)} src={plus} alt="" />
+          <img className="cursor-pointer" onClick={() => incrementHandler(value)} src={plus} alt="" />
         </div>
-      </div>
-    )
-  } else {
-    return (
-      <div className='flex flex-col'>
-        <label className={`${labelStyle[style]} mb-1`} htmlFor={id}>{label}</label>
-        <input
-          className={`${styles[style]} ${className} ${inputSize[size]} focus:outline-none px-6 ${error ? 'border-danger' : ''}`}
-          id={id}
-          name={name}
-          value={value}
-          onChange={onChange}
-          onBlur={onBlur}
-          type={type}
-          min={min}
-          max={max}
-          placeholder={placeholder}
-          {...rest}
-        />
       </div>
     );
   }
-};
+  return (
+    <div className="flex flex-col">
+      <label className={`${labelStyle[style]} mb-1`} htmlFor={id}>{label}</label>
+      <input
+        className={`${styles[style]} ${className} ${inputSize[size]} focus:outline-none px-6 ${error ? 'border-danger' : ''}`}
+        id={id}
+        name={name}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
+        type={type}
+        min={min}
+        max={max}
+        placeholder={placeholder}
+        {...rest}
+      />
+    </div>
+  );
+}
 
 export default Input;
-
