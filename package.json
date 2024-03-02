@@ -42,6 +42,6 @@
     "vite-plugin-pwa": "^0.16.7"
   },
   "main": "index.js",
-  "author": "arrafi-mahin",
+  "author": "arrafi.mahin@gmail.com",
   "license": "MIT"
 }
